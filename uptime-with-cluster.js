@@ -30,5 +30,11 @@ else
     process.on('uncaughtException', function(){
         console.log(err);
         process.exit(1);
-    })
+    });
+    process.on( 'SIGINT', function () {
+        //Kill worker
+        cluster.disconnect();
+        // Sortie
+        process.exit(1);
+    });
 }
