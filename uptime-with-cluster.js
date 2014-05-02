@@ -27,7 +27,7 @@ else
         console.log(e);
         process.exit(1);
     }
-    process.on('uncaughtException', function(){
+    process.on('uncaughtException', function(err){
         console.log(err);
         process.exit(1);
     });
